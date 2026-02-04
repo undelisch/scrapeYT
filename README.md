@@ -1,0 +1,60 @@
+# scrapeYT
+
+Download all comments from a single YouTube video and export them as a
+readable, standalone HTML file (and optionally CSV) using R.
+
+## Why scrape all YouTube comments? 
+
+YouTube’s web interface makes it difficult to analyze or browse large
+comment sections outside the platform. When legal issues occur, YouTube 
+will also take down the comments of a striked video along with the 
+video itself. 
+
+This script allows you to secure all comments and within seconds. 
+It produces a dataset output of the comment data, moreover, it then 
+converts everything in a nice HTML web page, implementing user images 
+as well as profile links, video title and so on, as well. 
+
+This makes your (or any) comments section offline-readable in a format 
+perfect for inspection, data analysis and search. 
+
+For whatever reason, personal or legal, you may use this tool to secure 
+comments you deem noteworthy. 
+
+## Basic Functionality Overview
+
+- Authentication using the YouTube Data API (oAuth)
+- Downloading all available comments for a single video 
+→ (incl. older versions of edited comments) 
+- Preservation of comment hierarchy (parent comments and replies)
+→ timestamped hierarchy 
+
+- Export of:
+  - a structured CSV file (optional)
+  - a standalone HTML file with minimal styling (default)
+
+## Functionality Breakdown
+
+1. Employ `tuber` R package to authenticate via YouTube API
+2. Fetch comments associated with a given video ID (i.e. https://www.youtube.com/watch?v=<videoID>)
+3. Normalize and sor comments by timestamp
+4. Recursively render comment threads into nested HTML
+5. Write result to disk in timestamped filename
+
+The generated HTML file has no external dependencies and can be opened
+in any modern browser.
+
+## Requirements
+
+- R base version 4.2.2 
+- R package `tuber`
+- valid YouTube API credentials
+  → more information here: https://developers.google.com/youtube/registering_an_application
+
+## Authentication
+
+Authentication is handled via OAuth using the `tuber` package.
+
+After obtaining your API key as a developer (takes about 5 min), modify the file (e.g. `youtubeoauth.R`) including your own login credentials. 
+
+When the program is run (e.g. in RStudio), you will be propmted to verify your account in an external browser window. Follow the instructions until you see the R console confirm successful verification. If necessary, re-run the script. You should then be able to retrieve and archive the comments of any public or unlisted YouTube video. 
