@@ -4,6 +4,9 @@ myyoutubeoauth.R
 # ignore archived older versions directory 
 archive/
 
+# ignore video content (demo video blender edit)
+video/
+
 # ignore collected data output folders & contents
 data/
 html/

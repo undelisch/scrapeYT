@@ -21,6 +21,11 @@ perfect for inspection, data analysis and search.
 For whatever reason, personal or legal, you may use this tool to secure 
 comments you deem noteworthy. 
 
+## Demo Video
+
+[![Demo Video](https://i.ytimg.com/vi/Wv0X5qosRFc/maxresdefault.jpg)](https://www.youtube.com/watch?v=Wv0X5qosRFc)
+
+
 ## Basic Functionality Overview
 
 - Authentication using the YouTube Data API (oAuth)
@@ -35,7 +40,7 @@ comments you deem noteworthy.
 
 ## Functionality Breakdown
 
-1. Employ `tuber` R package to authenticate via YouTube API
+1. Employ `tuber` package to authenticate via YouTube API
 2. Fetch comments associated with a given video ID (i.e. https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 3. Normalize and sor comments by timestamp
 4. Recursively render comment threads into nested HTML
